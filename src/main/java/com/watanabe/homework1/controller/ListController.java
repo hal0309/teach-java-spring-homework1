@@ -12,8 +12,6 @@ import java.util.List;
 public class ListController {
     /* todo: humanList, dogList, catList, animalListを定義 */
 
-    List<CatModel> catList = new ArrayList<>();
-
     @PostMapping("addAnimal")
     public AnimalModel postAnimal(@RequestBody AnimalModel animalModel){
         /* todo: 何れかのリストにmodelを追加 */
