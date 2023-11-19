@@ -12,7 +12,7 @@ import java.util.List;
 @RestController
 @RequestMapping("list")
 public class ListController {
-    /* todo: humanList, dogList, catList, animalListを定義 */
+    /* 各種リストを定義 */
     List<HumanModel> humanList = new ArrayList<>();
     List<DogModel> dogList = new ArrayList<>();
     List<CatModel> catList = new ArrayList<>();
@@ -20,7 +20,7 @@ public class ListController {
 
     @PostMapping("addAnimal")
     public AnimalModel postAnimal(@RequestBody AnimalModel animalModel){
-        /* todo: 何れかのリストにmodelを追加 */
+        /* typeパラメータを基にモデルを分岐して追加 */
         switch (animalModel.type){
             case "human": humanList.add(new HumanModel(animalModel.name)); break;
             case "dog": dogList.add(new DogModel(animalModel.name)); break;
@@ -28,6 +28,7 @@ public class ListController {
             default: animalList.add(animalModel); break;
         }
 
+        /* 画面表示(テスト用) */
         System.out.println("humanList: " + humanList.stream().map(x -> x.name).toList());
         System.out.println("dogList: " + dogList.stream().map(x -> x.name).toList());
         System.out.println("catList: " + catList.stream().map(x -> x.name).toList());
@@ -36,7 +37,7 @@ public class ListController {
         return animalModel;
     }
 
-    /* todo: getHumanList, getDogList, getCatList, getAnimalList を実装 */
+    /* 各種のgetエンドポイントを実装 */
     @GetMapping("getHumanList")
     public List<HumanModel> getHumanList(){
         return humanList;
