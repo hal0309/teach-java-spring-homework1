@@ -7,7 +7,9 @@ import com.watanabe.homework1.model.HumanModel;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("list")
@@ -17,6 +19,9 @@ public class ListController {
     List<DogModel> dogList = new ArrayList<>();
     List<CatModel> catList = new ArrayList<>();
     List<AnimalModel> animalList = new ArrayList<>();
+
+    /* todo: このmapに値を追加していく */
+    Map<String, AnimalModel> animalMap = new HashMap<>();
 
     @PostMapping("addAnimal")
     public AnimalModel postAnimal(@RequestBody AnimalModel animalModel){
@@ -28,6 +33,8 @@ public class ListController {
             default: animalList.add(animalModel); break;
         }
 
+        addAnimalToMap(animalModel);
+
         /* 画面表示(テスト用) */
         System.out.println("humanList: " + humanList.stream().map(x -> x.name).toList());
         System.out.println("dogList: " + dogList.stream().map(x -> x.name).toList());
@@ -35,6 +42,12 @@ public class ListController {
         System.out.println("animalList: " + animalList.stream().map(x -> x.name).toList());
 
         return animalModel;
+    }
+
+    private void addAnimalToMap(AnimalModel animalModel) {
+        animalModel.hello(); // 鳴き声チェック
+
+        /* todo: AnimalModelをtypeによって分類し、追加or更新する */
     }
 
     /* 各種のgetエンドポイントを実装 */

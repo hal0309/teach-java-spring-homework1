@@ -1,5 +1,34 @@
 # homework1
 
+## 2023年11月23日 課題
+
+---
+### Overrideの復習
+AnimalModelを継承したサブクラスであるDogModel, CatModel, HumanModelで
+親クラスのhello()メソッドをオーバーライドしてください。
+
+
+### Mapの活用
+ListController内にanimalMapを用意した。
+addAnimalToMapメソッドが呼び出された時に、animalMapを更新するようにしてください。  
+(すでに同じtypeのAnimalModelがMapに存在した場合、上書きしてください)
+~~~
+(ListController.java)
+
+/* animalMapの中身 */
+
+// name=pochiのDogModelが追加された
+{"dog": AnimalModel(name = "pochi")}
+
+// name=takeshiのHumanModelが追加された
+{"dog": AnimalModel(name = "pochi"), "human": AnimalModel(name = "takeshi")}
+
+// name=inuのDogModelが追加された(既にあるpochiが削除され、inuのモデルに更新される)
+{"dog": AnimalModel(name = "inu"), "human": AnimalModel(name = "takeshi")}
+
+~~~
+
+
 ## 2023年11月19日 課題
 
 ---

@@ -10,6 +10,6 @@ public class AnimalModel {
 
 
     public void hello() {
-        System.out.println("Hello, I am Animal");
+        System.out.println("animal yeah!");
     }
 }
