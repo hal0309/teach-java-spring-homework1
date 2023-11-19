@@ -5,6 +5,11 @@ public class HumanModel extends AnimalModel {
         super(name, "human");
     }
 
-    // todo: hello()をオーバーライドして、人間ののあいさつを出力するようにしてください。
+    // hello()をオーバーライドして、人間ののあいさつを出力
+    // hello()をオーバーライドして、犬の鳴き声を出力
+    @Override
+    public void hello() {
+        System.out.println("human hello!!");
+    }
 
 }

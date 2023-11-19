@@ -12,4 +12,9 @@ public class AnimalModel {
     public void hello() {
         System.out.println("animal yeah!");
     }
+
+    @Override
+    public String toString() {
+        return "AnimalModel(name=" + name + ")";
+    }
 }
