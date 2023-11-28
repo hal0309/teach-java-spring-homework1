@@ -34,7 +34,7 @@ public class ListController {
         addAnimalToMap(typedAnimalModel);
 
         // todo: この画面表示が適切になるように考える
-        System.out.println("animalList: " + animalList.toString());
+        System.out.println("animalList: " + animalList.toString() + "\n");
 
         return animalModel;
     }
