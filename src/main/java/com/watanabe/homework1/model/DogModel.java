@@ -5,6 +5,9 @@ public class DogModel extends AnimalModel {
         super(name, "dog");
     }
 
-    // todo: hello()をオーバーライドして、犬の鳴き声を出力するようにしてください。
-
+    // hello()をオーバーライドして、犬の鳴き声を出力
+    @Override
+    public void hello() {
+        System.out.println("dog bow!!");
+    }
 }

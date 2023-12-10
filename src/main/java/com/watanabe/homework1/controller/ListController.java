@@ -47,7 +47,15 @@ public class ListController {
     private void addAnimalToMap(AnimalModel animalModel) {
         animalModel.hello(); // 鳴き声チェック
 
-        /* todo: AnimalModelをtypeによって分類し、追加or更新する */
+        /* AnimalModelをtypeによって分類し、追加or更新する */
+        switch (animalModel.type){
+            case "human": animalMap.put("human", animalModel); break;
+            case "dog": animalMap.put("dog", animalModel); break;
+            case "cat": animalMap.put("cat", animalModel); break;
+            default: animalMap.put("animal", animalModel); break;
+        }
+
+        System.out.println("animalMap: " + animalMap);
     }
 
     /* 各種のgetエンドポイントを実装 */
