@@ -6,5 +6,8 @@ public class CatModel extends AnimalModel {
     }
 
     // todo: hello()をオーバーライドして、猫の鳴き声を出力するようにしてください。
-
+    @Override
+    public void hello(){
+        System.out.println("nyah"); // 処理を変更
+    }
 }
