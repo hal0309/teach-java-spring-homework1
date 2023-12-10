@@ -1,5 +1,45 @@
 # homework1
 
+
+## 2023年12月3日 課題  
+
+---
+### Overrideの復習
+現状、何も変更を加えない状態で、Postmanで以下のリクエストを順番に送信したとする。
+* `{"name": "pochi","type": "dog"}`
+* `{"name": "tama","type": "cat"}`
+* `{"name": "nakano","type": "human"}`
+
+そうすると、Consoleには以下のような出力が得られる。
+~~~
+(Console)
+animalMap: {dog=AnimalModel(name=pochi)}
+animalList: [AnimalModel(name=pochi)]
+
+animalMap: {cat=AnimalModel(name=tama), dog=AnimalModel(name=pochi)}
+animalList: [AnimalModel(name=pochi), AnimalModel(name=tama)]
+
+animalMap: {cat=AnimalModel(name=tama), dog=AnimalModel(name=pochi), human=AnimalModel(name=nakano)}
+animalList: [AnimalModel(name=pochi), AnimalModel(name=tama), AnimalModel(name=nakano)]
+~~~
+実装上はAnimalModelを継承したDogModel, CatModel, HumanModelを追加しているはずだが、
+Consoleに出力される内容はAnimalModelのままである。
+
+この原因を突き止め、以下の出力になるように修正してください。
+~~~
+(Console)
+animalMap: {dog=DogModel(name=pochi)}
+animalList: [DogModel(name=pochi)]
+
+animalMap: {cat=CatModel(name=tama), dog=DogModel(name=pochi)}
+animalList: [DogModel(name=pochi), CatModel(name=tama)]
+
+animalMap: {cat=CatModel(name=tama), dog=DogModel(name=pochi), human=HumanModel(name=nakano)}
+animalList: [DogModel(name=pochi), CatModel(name=tama), HumanModel(name=nakano)]
+~~~
+
+> 今回の変更箇所はtodo付近ではありません。
+
 ## 2023年11月23日 課題
 
 ---
