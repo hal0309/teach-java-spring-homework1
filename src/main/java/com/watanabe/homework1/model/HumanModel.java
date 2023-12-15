@@ -12,4 +12,8 @@ public class HumanModel extends AnimalModel {
         System.out.println("human hello!!");
     }
 
+    @Override
+    public String toString() {
+        return "HumanModel(name=" + name + ")";
+    }
 }
