@@ -11,4 +11,8 @@ public class CatModel extends AnimalModel {
         System.out.println("cat meow!!");
     }
 
+    @Override
+    public String toString() {
+        return "CatModel(name=" + name + ")";
+    }
 }

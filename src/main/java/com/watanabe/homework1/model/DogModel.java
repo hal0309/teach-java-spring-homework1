@@ -10,4 +10,9 @@ public class DogModel extends AnimalModel {
     public void hello() {
         System.out.println("dog bow!!");
     }
+
+    @Override
+    public String toString() {
+        return "DogModel(name=" + name + ")";
+    }
 }
